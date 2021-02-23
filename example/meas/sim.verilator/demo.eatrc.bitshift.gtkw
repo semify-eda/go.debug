@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Jun 21 14:31:46 2020
+[*]
+[dumpfile] "./eaInspectorWaves.trc"
+[dumpfile_mtime] "Sun Jun 21 14:24:18 2020"
+[dumpfile_size] 5594
+[savefile] "./demo.eatrc.bitshift.gtkw"
+[timestart] 1050
+[size] 1920 1027
+[pos] -334 -1115
+*-13.317607 4310 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Top.
+[treeopen] Top.Analyzer_006.
+[treeopen] Top.Analyzer_006.SampleChecker.
+[sst_width] 302
+[signals_width] 288
+[sst_expanded] 1
+[sst_vpaned_height] 372
+@420
+Top.Analyzer_006.Samples.SampleNr
+@28
+Top.Analyzer_006.Samples.IsPass
+@22
+Top.Analyzer_006.Samples.DataExpected
+Top.Analyzer_006.Samples.DataRead
+@28
+Top.Analyzer_006.SampleChecker.Checker000.LOG_SHIFT_IsFailCheckPos
+Top.Analyzer_006.SampleChecker.Checker000.LOG_SHIFT_IsPass
+[pattern_trace] 1
+[pattern_trace] 0

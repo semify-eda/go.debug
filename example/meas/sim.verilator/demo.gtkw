@@ -1,0 +1,120 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Jun 21 14:41:26 2020
+[*]
+[dumpfile] "/project/ea/example/meas/simulation/logs/vlt_dump.vcd"
+[dumpfile_mtime] "Sun Jun 21 14:39:49 2020"
+[dumpfile_size] 163801
+[savefile] "/project/ea/example/meas/simulation/demo.gtkw"
+[timestart] 9837
+[size] 1920 1027
+[pos] -1 -1
+*-10.360132 15324 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.top.
+[treeopen] TOP.top.u_meas_top_system.
+[treeopen] TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.
+[treeopen] TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.
+[sst_width] 327
+[signals_width] 236
+[sst_expanded] 1
+[sst_vpaned_height] 265
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.rst_ni
+>12
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.clk
+@200
+>0
+-ADC
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.spi_cs_no
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.spi_sck_o
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.spi_miso_i[1:0]
+@22
+[color] 2
+TOP.top.u_meas_top_system.u_adc_spi_vip.tx_mon_data0_o[11:0]
+[color] 2
+TOP.top.u_meas_top_system.u_adc_spi_vip.tx_mon_data1_o[11:0]
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.bit_cnt_ff[3:0]
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.datax_shft_en
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.datax_shft
+@22
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.data0_shft_ff[11:0]
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.data_update_o
+@22
+[color] 3
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.data0_o[11:0]
+[color] 3
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.data1_o[11:0]
+@200
+-AVG
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data0.din_update_i
+@22
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data0.din_i[11:0]
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data0.dout_update_o
+@24
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data0.dout_o[11:0]
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.din_update_i
+@22
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.din_i[11:0]
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.dout_update_o
+@8025
+[color] 1
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.dout_o[11:0]
+@20000
+-
+-
+@24
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum1[11:0]
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum2[11:0]
+@c00024
+TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+@28
+(0)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(1)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(2)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(3)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(4)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(5)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(6)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(7)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(8)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(9)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(10)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(11)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+(12)TOP.top.u_meas_top_system.u_meas_top.u_avg_data1.sum[12:0]
+@1401200
+-group_end
+@200
+-DAC
+@c00022
+TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+@28
+(0)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(1)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(2)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(3)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(4)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(5)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(6)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(7)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(8)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(9)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(10)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+(11)TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data0_i[11:0]
+@1401200
+-group_end
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_spi_dac.data1_updata_i
+@22
+TOP.top.u_meas_top_system.u_dac_spi_vip.rx_mon_data0_o[11:0]
+@28
+TOP.top.u_meas_top_system.u_dac_spi_vip.rx_mon_data_update_o
+[pattern_trace] 1
+[pattern_trace] 0

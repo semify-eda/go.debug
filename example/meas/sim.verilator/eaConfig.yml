@@ -1,0 +1,48 @@
+---
+Analyzer:
+  MaxNbr: "999"  # up to 999
+Samples:
+  MaxNbr: "65535" # up to 2^16-1 (65535)
+Inspector:
+  Sample:
+    DataShift:
+      Enable:           true
+      BitShiftMin:      "-2"
+      BitShiftMax:      "2"
+    Bit:
+      Enable:           true
+    DataSingleLimit:
+      Enable:           true
+      IsAboveLimit:     false
+      Limit:            "1024"
+    Integer:
+      Enable:           true
+      MaxTruncatedBits: "-1"
+      MaxRoundedBits:   "-1"
+  Segment:
+    SampleShift:
+      Enable:           true
+      SampleShiftMin:   "-2"
+      SampleShiftMax:   "2"
+      ByteShiftMin:     "-3"
+      ByteShiftMax:     "3"
+    Statistic:
+      Enable:           true
+    Range:
+      Enable:           true
+Dump:
+  FileFstEnable:     true
+  FileFstName:       "eaInspectorWaves.fst"
+  FileVcdEnable:     true
+  FileVcdName:       "eaInspectorWaves.vcd"
+  FailAnalzerOnly:   false
+  FailInspectorOnly: true
+Log:
+  ToConsoleEnable:  true
+  ConsoleVerbosity: "EA_VERBOSITY_LEVEL_LOW" # EA_VERBOSITY_LEVEL_LOW
+  ToFileEnable:     true
+  FileVerbosity:    "EA_VERBOSITY_LEVEL_FULL" # (EA_VERBOSITY_LEVEL_FULL)
+  FileName:         "eaLogFile.log"
+  SumSkipPass:      true
+Report:
+  PosPercLimit: "50.0"

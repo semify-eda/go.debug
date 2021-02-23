@@ -1,0 +1,52 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Mon Jun 22 15:24:22 2020
+[*]
+[dumpfile] "./eaInspectorWaves.trc"
+[dumpfile_mtime] "Mon Jun 22 15:20:13 2020"
+[dumpfile_size] 4807
+[savefile] "./demo.eatrc.sat.gtkw"
+[timestart] 1050
+[size] 1920 1027
+[pos] -308 -1089
+*-12.399312 20506 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Top.
+[treeopen] Top.Analyzer_001.
+[treeopen] Top.Analyzer_001.SampleInspector.
+[treeopen] Top.Analyzer_002.
+[treeopen] Top.Analyzer_002.SampleInspector.
+[treeopen] Top.Analyzer_002.Samples.
+[treeopen] Top.Analyzer_003.
+[treeopen] Top.Analyzer_003.SampleInspector.
+[treeopen] Top.Analyzer_004.
+[treeopen] Top.Analyzer_004.SampleInspector.
+[treeopen] Top.Analyzer_005.
+[treeopen] Top.Analyzer_005.SampleInspector.
+[treeopen] Top.Analyzer_006.
+[treeopen] Top.Analyzer_006.SampleInspector.
+[sst_width] 329
+[signals_width] 269
+[sst_expanded] 1
+[sst_vpaned_height] 404
+@200
+-Samples
+@420
+Top.Analyzer_002.Samples.SampleNr
+@8024
+Top.Analyzer_002.Samples.DataExpected
+@20000
+-
+@8024
+Top.Analyzer_002.Samples.DataRead
+@20000
+-
+@28
+Top.Analyzer_002.Samples.IsPass
+@200
+-ErrorAnalyzer
+@29
+Top.Analyzer_002.SampleInspector.Inspector003.ARITH_LIMIT_IsPass
+@28
+Top.Analyzer_002.SampleInspector.Inspector003.ARITH_LIMIT_IsFailFixed
+[pattern_trace] 1
+[pattern_trace] 0

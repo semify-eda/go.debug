@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.106 (w)1999-2020 BSI
+[*] Wed Sep  2 16:47:04 2020
+[*]
+[dumpfile] "/projects/leda/leda_1/2v0/work/kstrohma/units/ea/example/shiftreg/simulation/eaInspectorWaves.trc"
+[dumpfile_mtime] "Wed Sep  2 16:19:44 2020"
+[dumpfile_size] 1318
+[savefile] "/projects/leda/leda_1/2v0/work/kstrohma/units/ea/example/shiftreg/simulation/demo.shiftdir.gtkw"
+[timestart] 3300
+[size] 2560 1387
+[pos] -532 -233
+*-11.463837 16900 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Top.
+[treeopen] Top.Analyzer_001.
+[treeopen] Top.Analyzer_001.SampleInspector.
+[treeopen] Top.Analyzer_001.SegmentInspector.
+[sst_width] 359
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 427
+@421
+Top.Analyzer_001.Samples.SampleNr
+@28
+Top.Analyzer_001.Samples.IsPass
+@22
+Top.Analyzer_001.Samples.DataRead
+Top.Analyzer_001.Samples.DataExpected
+@28
+Top.Analyzer_001.SampleInspector.Inspector002.LOG_SHIFTDIR_IsPass
+Top.Analyzer_001.SampleInspector.Inspector002.LOG_SHIFTDIR_IsFailFixed
+@2028
+^1 /projects/leda/leda_1/2v0/work/kstrohma/units/ea/example/shiftreg/simulation/pf.map
+Top.Analyzer_001.SegmentInspector.Inspector000.SHIFT_-1[1:0]
+^1 /projects/leda/leda_1/2v0/work/kstrohma/units/ea/example/shiftreg/simulation/pf.map
+Top.Analyzer_001.SegmentInspector.Inspector000.SHIFT_-2[1:0]
+^1 /projects/leda/leda_1/2v0/work/kstrohma/units/ea/example/shiftreg/simulation/pf.map
+Top.Analyzer_001.SegmentInspector.Inspector000.SHIFT_1[1:0]
+^1 /projects/leda/leda_1/2v0/work/kstrohma/units/ea/example/shiftreg/simulation/pf.map
+Top.Analyzer_001.SegmentInspector.Inspector000.SHIFT_2[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

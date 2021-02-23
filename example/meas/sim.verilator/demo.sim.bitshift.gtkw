@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Sep  2 17:23:37 2020
+[*]
+[dumpfile] "/project/ea/example/meas/simulation/eaInspectorWaves.trc"
+[dumpfile_mtime] "Wed Sep  2 17:12:20 2020"
+[dumpfile_size] 6986
+[savefile] "/project/ea/example/meas/simulation/demo.sim.bitshift.gtkw"
+[timestart] 1050
+[size] 1591 915
+[pos] -1 -1
+*-13.721240 42710 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Top.
+[treeopen] Top.Analyzer_005.
+[treeopen] Top.Analyzer_005.SampleInspector.
+[treeopen] Top.Analyzer_005.SegmentInspector.
+[sst_width] 336
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 517
+@420
+Top.Analyzer_005.Samples.SampleNr
+@22
+Top.Analyzer_005.Samples.DataRead
+Top.Analyzer_005.Samples.DataExpected
+@28
+Top.Analyzer_005.Samples.IsPass
+Top.Analyzer_005.SampleInspector.Inspector000.LOG_SHIFT_IsPass
+Top.Analyzer_005.SampleInspector.Inspector000.LOG_SHIFT_IsFailFixed
+[pattern_trace] 1
+[pattern_trace] 0

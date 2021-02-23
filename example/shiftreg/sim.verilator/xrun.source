@@ -1,0 +1,1 @@
+xrun -F ../testbench/file.xcelium.f -F ../rtl/file.f -dpi -I. -I../../../src/ea -F ../../../src/ea/file.f -clean -disable_sem2009 -linedebug -top top -gui

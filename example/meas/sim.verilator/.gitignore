@@ -1,0 +1,6 @@
+logs/*
+obj_dir/*
+*.log
+*.trc
+*.vcd
+*.fst

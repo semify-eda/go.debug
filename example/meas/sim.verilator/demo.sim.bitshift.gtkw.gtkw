@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Sep  2 17:35:24 2020
+[*]
+[dumpfile] "/project/ea/example/meas/simulation/logs/vlt_dump.vcd"
+[dumpfile_mtime] "Wed Sep  2 17:30:11 2020"
+[dumpfile_size] 167998
+[savefile] "/project/ea/example/meas/simulation/demo.sim.bitshift.gtkw.gtkw"
+[timestart] 1
+[size] 1591 915
+[pos] 3 -64
+*-10.847139 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.top.
+[treeopen] TOP.top.u_meas_top_system.
+[treeopen] TOP.top.u_meas_top_system.u_meas_top.
+[sst_width] 294
+[signals_width] 170
+[sst_expanded] 1
+[sst_vpaned_height] 251
+@28
+TOP.top.u_meas_top_system.u_adc_spi_vip.spi_cs_ni
+@800028
+TOP.top.u_meas_top_system.u_adc_spi_vip.spi_miso_o[1:0]
+@28
+(0)TOP.top.u_meas_top_system.u_adc_spi_vip.spi_miso_o[1:0]
+(1)TOP.top.u_meas_top_system.u_adc_spi_vip.spi_miso_o[1:0]
+@200
+-ADC-Int
+@1001200
+-group_end
+@29
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.clk
+@28
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.data_update_o
+@22
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.data0_o[11:0]
+TOP.top.u_meas_top_system.u_meas_top.u_spi_adc.data1_o[11:0]
+[pattern_trace] 1
+[pattern_trace] 0
