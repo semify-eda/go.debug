@@ -5,7 +5,7 @@
 * See the [documentation](doc/ea.md) to get a detailed *ErrorAnalyzer* description
 * See the [release notes](Release.md) to learn about the latest improvements of the *ErrorAnalyzer*
 
-## Description
+## Background and Motivation
 During the development of an ASIC or FPGA digital verification consumes up between half and two third of the overall effort. Therefore, it is important to speed-up the verification process in order to achieve a productivity gain during the digital design process. Taking a closer look into the digital verification process we can identify four main activities. The data is based on **The 2018 Wilson Research Group Functional Verification Study** https://blogs.mentor.com/verificationhorizons/blog/2018/11/19/part-1-the-2018-wilson-research-group-functional-verification-study.  
 1. (44%) Debug 
 1. (21%) Creating Tests and Running Simulations
