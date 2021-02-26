@@ -35,7 +35,7 @@ The most suitable places to integrate the *ErrorAnalyzer* into a verification en
 1. Add Samples (`eaAnalyzerAddSample`)
 1. Report (`eaAnalyzerReport`)
 
-For more details on the integration see the provided examples described under [Examples](./doc/ea.md)
+For more details on the integration see the provided examples described under [Examples](./doc/ea.md#Examples).
 
 
 # Installation
