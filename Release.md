@@ -1,8 +1,13 @@
-# Version 1v5: d. MM 2021
+# Version 1v5: 19. Feb 2021
 
 ## New Features
+  - (Issue ErrorAnalyzer/ea_dev#87):  Add a bit swap check to the Statistic Inspector
+  - (Issue ErrorAnalyzer/ea_dev#89):  Create message dictionary dumper
+  - (Issue ErrorAnalyzer/ea_dev#109): Flow improvement, added setup scripts to export EA_ROOT
+  - (Issue ErrorAnalyzer/ea_dev#93): Provide Analyzer Summary in easy parse able format
 
 ## Improvements
+  - (Issue ErrorAnalyzer/ea_dev#104): Remove Sample *Inspector* Limit
 
 ## Bug Fixes
 

@@ -11,10 +11,6 @@ Inspector:
       BitShiftMax:      "2"
     Bit:
       Enable:           true
-    DataSingleLimit:
-      Enable:           true
-      IsAboveLimit:     false
-      Limit:            "1024"
     Integer:
       Enable:           true
       MaxTruncatedBits: "-1"
@@ -46,3 +42,5 @@ Log:
   SumSkipPass:      true
 Report:
   PosPercLimit: "50.0"
+  SummaryDumpEnable: true
+  SummaryFilename:  "eaAnalyzerSummary.csv"

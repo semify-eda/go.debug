@@ -1,4 +1,13 @@
-# Configuration File Documentation:
+# Configuration File Description
+*ErrorAnalyzer* can be configured via a configuration file. The configuration file is stored in *YAML* format under the name `eaConfig.yml`. See [YAML](www.yaml.org) for details.  
+
+There are three possible locations for storing the configuration file `eaConfig.yml`. All three locations are checked during start-up and read in a fixed order. If a configuration parameter is present in more than one configuration file the parameter which occurs last has the highest priority. In other words, the configuration parameters are always overwritten. 
+
+The following order is used:
+1. *ErrorAnalyzer* installation directory defined via environment variable `$EA_ROOT`
+2. User defined location defined via environment variable `$EA_CONFIG`
+3. Actual *ErrorAnalyzer* execution directory 
+
 The configuration is separated into sections.
 The naming of the configuration parameter fits to the naming of the corresponding variable within the configuration object 'eaConfig'.
 
@@ -32,10 +41,6 @@ The parameters `Dump:ConsoleVerbosity` and `Dump:FileVerbosity` can be given as
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`BitShiftMax: [int]` Max bit shift to be checked \
 &nbsp;&nbsp;&nbsp;&nbsp;`Bit:` \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Enable: [bool]` Enables the Bit Inspector \
-&nbsp;&nbsp;&nbsp;&nbsp;`DataSingleLimit:` \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Enable: [bool]` Enables the DataSingleLimit Inspector \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IsAboveLimit: [bool]` Check above or below limit \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Limit: [int]` Limit to be checked against \
 &nbsp;&nbsp;&nbsp;&nbsp;`Integer:` \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Enable: [bool]` Enables the Integer Inspector \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MaxTruncatedBits: [int]` The maximum number of bits that are tested for truncation \
@@ -67,6 +72,9 @@ The parameters `Dump:ConsoleVerbosity` and `Dump:FileVerbosity` can be given as
 &nbsp;&nbsp;`SumSkipPass: [bool]` In summary, skip Analyzer which are all pass \
 `Report:` \
 &nbsp;&nbsp;`PosPercLimit: [float]` Percentage of positive fail checks to be reported \
+&nbsp;&nbsp;`SummaryDumpEnable: [bool]` Enable dumping analyzer summary into csv file \
+&nbsp;&nbsp;`SummaryFilename: [string]` Filename for analyzer summary csv dumping \
+
 
 ## Actual file
 
@@ -84,10 +92,6 @@ Inspector:
       BitShiftMax:      "2"
     Bit:
       Enable:           true
-    DataSingleLimit:
-      Enable:           true
-      IsAboveLimit:     false
-      Limit:            "1024"
     Integer:
       Enable:           true
       MaxTruncatedBits: "-1"
@@ -119,4 +123,6 @@ Log:
   SumSkipPass:      true
 Report:
   PosPercLimit: "50.0"
+  SummaryDumpEnable: true
+  SummaryFilename:  "eaAnalyzerSummary.csv"
 ```
