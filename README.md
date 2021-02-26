@@ -123,3 +123,10 @@ The following four commands modify the design and the verification environment t
     
 
 
+## Licenseing 
+
+The basic version of *ErrorAnalyzer* can be used free of charge. The free version is limited in terms of maximal number of supported *Analyzer* (5) and maximal support number of samples per *Analyzer* (256).
+
+In case a full *ErrorAnalyzer* version is required please get in contact with the *semify* team via
+- email: office@semify-eda.com
+- Webpage (request a demo): [semiy](www.semifore-eda.com)
