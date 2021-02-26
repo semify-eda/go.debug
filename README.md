@@ -35,6 +35,9 @@ The most suitable places to integrate the *ErrorAnalyzer* into a verification en
 1. Add Samples (`eaAnalyzerAddSample`)
 1. Report (`eaAnalyzerReport`)
 
+For more details on the integration see the provided examples described under [Examples](./doc/ea.md)
+
+
 # Installation
 
 Clone the git repository from GitHub
@@ -67,60 +70,6 @@ For digital simulations two simulator were used and tested:
 
 ## Waveform Viewer
 As waveform viewer GTKWave (v3.3.104 (w)1999-2020 BSI) is used. A description on how to download and install GTKWave can be found under http://gtkwave.sourceforge.net/.
-
-# Examples
-There are several examples available to demonstrate the functionality of the *ErrorAnalyzer*. All examples are placed under the `examples` directory. 
-For running the examples a `Makefile` is available for each example. All examples can be run either with Verilator or Cadence Xcelium.
-
-The directory structure of the examples looks as follows:
-
-    <example>
-      - rtl … containing the RTL design
-      -	testbench … containing the testbench / verification environment
-      -	sim.verilator … simulation directory for Verilator including a make file (`Makefile`) for starting the simulation
-      -	sim.xcelium … simulation directory for Cadence Xcelium including a make file (`Makefile`) for starting the simulation
-
-For running examples, first clone the GIT repository to your local machine. Make sure that all required software described above is installed. 
-Change to the simulation directory.
-
-    cd example/<example>/sim.verilator 
-    cd ea/example/<example>/sim.xcelium 
-
-Start the simulation
-
-    call `make` for running the example
-    
-This will compile and run the simulation. Running the simulation using the simple `make` command runs the simulation without any error. Therefore, *ErrorAnalyzer* can't provide any error pattern proposal. To show the *ErrorAnalyzer* features some errors must be present. Errors are enabled by running the make command with different macro definitions. The required macro definitions are example dependent and can be obtained by calling `make help` . This allows the *ErrorAnalyer* to provide error pattern suggestions.
-
-Beside the console output *ErrorAnalyzer* generates the following files.
-
-* `eaLogFile.log`: *ErrorAnalyzer* log file including reporting of each Analyzer
-* `eaInspectorWaves.fst`: *ErrorAnalyzer* traces giving details regarding the result of each Analyzer and Inspector in GTKWave FST format
-* `eaInspectorWaves.vcd`: *ErrorAnalyzer* traces giving details regarding the result of each Analyzer and Inspector in vcd format
-
-
-## Example `meas`
-The example `meas` consists of an RTL design called meas_top. It contains an SPI master with two channels for reading in ADC data, an average for each channel and a second SPI master for transferring the averaged data to a DAC. The ADC and the DAC are modeled within the verification environment as VIPs.
-
-The block diagram of the example design can be found under [meas_top_tb](doc/meas_top_tb.svg).
-
-The following four commands modify the design and the verification environment to trigger simulation fails. 
-
-    make EA_ERROR_BITSHIFT="en"
-    make EA_ERROR_TIMESHIFT="en"
-    make EA_ERROR_SAT="en"
-    make EA_ERROR_STUCK="en"
-
-## Example `shiftreg`
-The example `shiftreg` consists of an RTL design called ste_shift_reg. It contains simple shift register with synchronous clear and a parallel load.
-
-The following four commands modify the design and the verification environment to trigger simulation fails. 
-
-    make EA_ERROR_BITSHIFT='en'    
-    make EA_ERROR_BITSINVERSED='en'
-    make EA_ERROR_BITSREVERSED='en'
-    make EA_ERROR_BYTESSWAPPED='en'
-    
 
 
 ## Licenseing 
