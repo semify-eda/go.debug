@@ -72,7 +72,7 @@ For digital simulations two simulator were used and tested:
 As waveform viewer GTKWave (v3.3.104 (w)1999-2020 BSI) is used. A description on how to download and install GTKWave can be found under http://gtkwave.sourceforge.net/.
 
 
-## Licenseing 
+## Licensing 
 
 The basic version of *ErrorAnalyzer* can be used free of charge. The free version is limited in terms of maximal number of supported *Analyzer* (5) and maximal support number of samples per *Analyzer* (256).
 
