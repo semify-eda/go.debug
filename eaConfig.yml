@@ -11,10 +11,6 @@ Inspector:
       BitShiftMax:      "2"
     Bit:
       Enable:           true
-    DataSingleLimit:
-      Enable:           true
-      IsAboveLimit:     false
-      Limit:            "1024"
     Integer:
       Enable:           true
       MaxTruncatedBits: "-1"
@@ -31,7 +27,7 @@ Inspector:
     Range:
       Enable:           true
 Dump:
-  FileFstEnable:     false
+  FileFstEnable:     true
   FileFstName:       "eaInspectorWaves.fst"
   FileVcdEnable:     true
   FileVcdName:       "eaInspectorWaves.vcd"
@@ -46,3 +42,6 @@ Log:
   SumSkipPass:      true
 Report:
   PosPercLimit: "50.0"
+  SummaryDumpEnable: true
+  SummaryFilename:  "eaAnalyzerSummary.csv"
+

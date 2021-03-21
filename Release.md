@@ -1,13 +1,25 @@
+# Version 1v6: 21. Feb 2021
+
+## Improvements
+  - (Issue ErrorAnalyzer/ea_dev#98): Increase robustness of vcd file dumper
+  - (Issue ErrorAnalyzer/ea_dev#108): Improve truncation error pattern hnadling
+  - (Issue ErrorAnalyzer/ea_dev#9): Improve *Analyzer* log messages with fFilename and scope information
+
+## Bug fixes
+  - Several minor bug fixes
+
 # Version 1v5: 19. Feb 2021
 
 ## New Features
   - (Issue ErrorAnalyzer/ea_dev#87):  Add a bit swap check to the Statistic Inspector
   - (Issue ErrorAnalyzer/ea_dev#89):  Create message dictionary dumper
   - (Issue ErrorAnalyzer/ea_dev#109): Flow improvement, added setup scripts to export EA_ROOT
-  - (Issue ErrorAnalyzer/ea_dev#93): Provide Analyzer Summary in easy parse able format
+  - (Issue ErrorAnalyzer/ea_dev#93): Provide *ErrorAnalyzer* Summary in easy parse able format
 
 ## Improvements
   - (Issue ErrorAnalyzer/ea_dev#104): Remove Sample *Inspector* Limit
+  - (Issue ErrorAnalyzer/ea_dev#116): Improve output of Message
+  - (Issue ErrorAnalyzer/ea_dev#108): Truncation error pattern reporting fixed
 
 ## Bug Fixes
 
