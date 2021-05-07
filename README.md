@@ -29,14 +29,18 @@ Especially, searching for the mismatch pattern is a very time intensive task. Th
 *ErrorAnalyzer* focus exactly on this issue. It provides a structured reporting and complete reporting of simulation errors and provides a suggestion for the error pattern with the highest probability for being the reason of the error. By using this information, it is much easier for the verification engineer to find the root cause of a simulation fail.
 
 # Integration
-During the development of the *ErrorAnalyzer*, special attention has been paid to an easy and smooth integration into existing verification environments. The integration is done by using the SystemVerilog DPI interface which allows an integration into UVM and also non UVM based verification environments. All required functions are defined in a SystemVerilog package called `ea_package.sv`. 
-The most suitable places to integrate the *ErrorAnalyzer* into a verification environment are scoreboards and checker. The integration is done by following three steps.
+During the development of the *ErrorAnalyzer*, special attention has been paid to an easy and smooth integration into existing digital verification environments. For maximum flexibility, *ErrorAnalyzer* can be integrated into several different ways into a digital verification environment. The following integration options are available
+1. Via SystemVerilog DPI-C interface
+1. Via Verilog VPI interface
+1. Via Python
+1. Via C / C++ shared library
+
+Espeically the integration via the SystemVerilog DPI-C interface allows a smopth integration into UVM and also non UVM based verification environments. All required functions are defined in a SystemVerilog package called `ea_package.sv`. The most suitable places to integrate the *ErrorAnalyzer* into a verification environment are scoreboards and checker. The integration is done by following three steps.
 1. Create (`eaAnalyzerCreate`) 
 1. Add Samples (`eaAnalyzerAddSample`)
 1. Report (`eaAnalyzerReport`)
 
 For more details on the integration see the provided examples described under [Examples](./doc/ea.md#Examples).
-
 
 # Installation
 
