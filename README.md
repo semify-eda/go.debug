@@ -94,4 +94,4 @@ The basic version of *ErrorAnalyzer* can be used free of charge. The free versio
 
 In case a full *ErrorAnalyzer* version is required please get in contact with the *semify* team via
 - email: office@semify-eda.com
-- Webpage (request a demo): [semify](www.semify-eda.com)
+- Webpage (request a demo): [semify](http://www.semify-eda.com)
