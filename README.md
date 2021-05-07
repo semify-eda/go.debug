@@ -51,6 +51,18 @@ Change to the root directory of the repository and run the setup.
 
 The given command sets the environment variable `EA_ROOT` which is used to reference to the root directory of the *ErrorAnalyzer*.
 
+*ErrorAnalyzer* is not at executeable program. It is a shared library which can be used together with a digital simulator. 
+
+## Digital Simulation
+For digital simulations three digital simulator are used and tested. Two of them (Verilator and Icarus) are open source simulator and one of them (Cadence Xcelium) is a professional simulator.
+
+* Verilator (4.034 2020-05-03 rev v4.034-6-gf8381751) simulator is used. A description on how to download and install Verilator can be found under: https://www.veripool.org/wiki/verilator/Manual-verilator
+* Cadence Xcelium 19.09
+* [Icarus Verilog](http://iverilog.icarus.com) version  11.0 (stable)  
+
+## Waveform Viewer
+As waveform viewer GTKWave (v3.3.104 (w)1999-2020 BSI) is used. A description on how to download and install GTKWave can be found under http://gtkwave.sourceforge.net/.
+
 
 ## Supported operating systems
 
