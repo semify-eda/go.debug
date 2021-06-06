@@ -97,7 +97,7 @@ int main(int argc, char** argv, char** env) {
 
     // Destroy model
     delete top;
-    top = NULL;
+    top = nullptr;
 
     // Fin
     exit(0);

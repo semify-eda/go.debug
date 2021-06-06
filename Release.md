@@ -1,9 +1,34 @@
+# Version 2v0: 30. May 2021
+
+## Improvements
+  - (Issue ErrorAnalyzer/ea_dev#158): Example for cocotb --> example/division
+  - (Issue ErrorAnalyzer/ea_dev#151): Rename shared library --> see documentation for detail
+  - (Issue ErrorAnalyzer/ea_dev#143): VPI support for Icarus Verilog
+  - (Issue ErrorAnalyzer/ea_dev#148): An example on VPI Integration added
+  - (Issue ErrorAnalyzer/ea_dev#142): Add support for VPI based *ErrorAnalyzer* functionality calls 
+  - (Issue ErrorAnalyzer/ea_dev#144): Configurable console color coding. Configuration parameter `ConsoleColorsEnable`
+  - (Issue ErrorAnalyzer/ea_dev#139): Add a Python wrapper for the ErrorAnalyzer
+  - (Issue ErrorAnalyzer/ea_dev#136): Remove warning messages if a partial config file is used
+  - (Issue ErrorAnalyzer/ea_dev#116): Improve output of Message 
+  - (Issue ErrorAnalyzer/ea_dev#101): Remove Sample *Inspector* Limit #104
+  - (Issue ErrorAnalyzer/ea_dev#107): Provide logging functions from simulation to ErrorAnalyzer
+  - (Issue ErrorAnalyzer/ea_dev#23) : Add functions to API `eaAnalyzersChecksPerform()`, `eaAnalyzerFinal()`
+  - (Issue ErrorAnalyzer/ea_dev#93) : Provide Analyzer Summary in easy parse able format
+  - (Issue ErrorAnalyzer/ea_dev#9)  : Log Messages improvements (Filename, Scope)
+  - (Issue ErrorAnalyzer/ea_dev#53):  Print log messages to simulator console
+  - (Issue ErrorAnalyzer/ea_dev#154): Log location Reporting
+  - (Issue ErrorAnalyzer/ea_dev#156): Console colors configuration switch
+
+## Bug fixes
+  - 
+
 # Version 1v6: 21. Feb 2021
 
 ## Improvements
   - (Issue ErrorAnalyzer/ea_dev#98): Increase robustness of vcd file dumper
-  - (Issue ErrorAnalyzer/ea_dev#108): Improve truncation error pattern hnadling
-  - (Issue ErrorAnalyzer/ea_dev#9): Improve *Analyzer* log messages with fFilename and scope information
+  - (Issue ErrorAnalyzer/ea_dev#108): Improve truncation error pattern handling
+  - (Issue ErrorAnalyzer/ea_dev#9): Improve *Analyzer* log messages with filename and scope information
+  - (Issue ErrorAnalyzer/ea_dev#23): Add Functions to API
 
 ## Bug fixes
   - Several minor bug fixes
@@ -20,6 +45,7 @@
   - (Issue ErrorAnalyzer/ea_dev#104): Remove Sample *Inspector* Limit
   - (Issue ErrorAnalyzer/ea_dev#116): Improve output of Message
   - (Issue ErrorAnalyzer/ea_dev#108): Truncation error pattern reporting fixed
+  - (Issue ErrorAnalyzer/ea_dev#107): Provide logging functions from ErrorAnalyzer to simulation
 
 ## Bug Fixes
 
@@ -85,7 +111,7 @@ Improvements and new Features
     * Waveform data base name changed from `eaInspectorWaves.trc` to `eaInspectorWaves.fst`. (ead_dev#12)
     
 * `ea_apckage.sv`: 
-    * Added documentation within comments  
+    * Added documentation within comments
     
     * Added new functions `eaAPIVerisonOk` in order to check API compatibility (ead_dev#20)
     

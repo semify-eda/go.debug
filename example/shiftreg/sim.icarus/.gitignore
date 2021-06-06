@@ -1,7 +1,5 @@
-logs/*
-obj_dir/*
 *.log
-*.trc
 *.vcd
 *.fst
 *.csv
+*.vvp

@@ -60,13 +60,19 @@ The example `shiftreg` consists of an RTL design called ste_shift_reg. It contai
 
 The following four commands modify the design and the verification environment to trigger simulation fails. 
 
-    make EA_ERROR_BITSHIFT='en'    
+    make EA_ERROR_BITSHIFT='en'
     make EA_ERROR_BITSINVERSED='en'
     make EA_ERROR_BITSREVERSED='en'
     make EA_ERROR_BYTESSWAPPED='en'
+   
+## Example `division`
+The example `division` consists of an RTL design called div_int. It divides an integer by another integer and results in a quotient and remainder.
+
+The following four commands modify the design and the verification environment to trigger simulation fails. 
+
+    make EA_ERROR_DBZ='en'
+    make EA_ERROR_SHIFT='en'
     
-
-
-
-
+## Example `logging`
+The example `logging` shows how to use the various logging functions through the API.
 

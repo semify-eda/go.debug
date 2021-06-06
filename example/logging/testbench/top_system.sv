@@ -51,9 +51,11 @@ module top_system (
   int eaIDReversed;
   int eaIDByteSwap;
   
-  initial begin    
+  initial begin   
+    eaReportInfo("INIT_TEST", EA_ANALYZER_NONE, "Testing eaInit() function before analyzer create", EA_VERBOSITY_LEVEL_NONE); 
     eaIDShifted = eaAnalyzerCreate("Bitshift testing", EA_TYPE_LOG, 24, EA_DATA_IS_UNSIGNED, $time);
     eaAnalyzerReport(eaIDShifted);
+    eaReportInfo("A_NEW", eaIDShifted, "Created new analyzer for Bitshift testing", EA_VERBOSITY_LEVEL_NONE);
     eaIDInversed = eaAnalyzerCreate("Bits inversion testing", EA_TYPE_LOG, 24, EA_DATA_IS_UNSIGNED, $time);
     eaIDReversed = eaAnalyzerCreate("Reversed bits testing", EA_TYPE_LOG, 24, EA_DATA_IS_UNSIGNED, $time);
     eaIDByteSwap = eaAnalyzerCreate("Test byte swapping", EA_TYPE_LOG, 24, EA_DATA_IS_UNSIGNED, $time);
@@ -92,6 +94,7 @@ module top_system (
   
   int clk_cnt;
   int my_clk_cnt;
+  int start = 0;
   
   always @(negedge reset_ni or negedge clk) begin
     if (~reset_ni) begin
@@ -106,6 +109,10 @@ module top_system (
   always @(negedge clk) begin 
     my_clk_cnt = 0;
     if (clk_cnt == my_clk_cnt) begin 
+      if(start == 0) begin
+        eaReportInfo("S_START", 0, "Simulation started", EA_VERBOSITY_LEVEL_NONE);
+        start = 1;
+      end
       din          = 1'b0;
       din_parallel = 24'h000000;
       shift_clr    = 1'b0;
@@ -117,46 +124,15 @@ module top_system (
     // Check shift
     for (int word=0; word<=9; word=word+1) begin
       data_in_vec = data_in_array[word];
-      //`ifdef EA_ERROR_BITSHIFT
-      //  // Shift data in the wrong directions
-      //  for (int i=0; i<24; i=i+1) begin 
-      //`else
         for (int i=23; i>=0; i=i-1) begin 
-      //`endif
-        if (clk_cnt == my_clk_cnt) begin 
-          shift_en = 1'b1;
-          din      = data_in_vec[i];
+          if (clk_cnt == my_clk_cnt) begin 
+            shift_en = 1'b1;
+            din      = data_in_vec[i];
         end
         my_clk_cnt = my_clk_cnt + 1;       
       end
       
       if (clk_cnt == my_clk_cnt) begin
-        `ifdef EA_ERROR_BITSHIFT
-          eaAnalyzerAddSample(eaIDShifted   , int'(dout_parallel>>2), int'(data_in_vec), $time);
-        `else
-          eaAnalyzerAddSample(eaIDShifted   , int'(dout_parallel), int'(data_in_vec), $time);
-        `endif
-        `ifdef EA_ERROR_BITSINVERSED
-          eaAnalyzerAddSample(eaIDInversed, int'(dout_parallel), int'(~data_in_vec), $time);
-        `else
-          eaAnalyzerAddSample(eaIDInversed, int'(dout_parallel), int'(data_in_vec), $time);
-        `endif
-        `ifdef EA_ERROR_BITSREVERSED
-          eaAnalyzerAddSample(eaIDReversed, int'(dout_parallel), int'({<<{data_in_vec}}), $time);
-        `else
-          eaAnalyzerAddSample(eaIDReversed, int'(dout_parallel), int'(data_in_vec), $time);
-        `endif
-        `ifdef EA_ERROR_BYTESSWAPPED
-          eaAnalyzerAddSample(eaIDByteSwap, int'(dout_parallel), int'({{data_in_vec[07:00]},
-                                                                       {data_in_vec[15:08]},
-                                                                       {data_in_vec[23:16]}}), $time);
-        `else
-          `ifdef EA_ERROR_CONST 
-            eaAnalyzerAddSample(eaIDByteSwap, int'(24), int'(data_in_vec), $time);
-          `else 
-            eaAnalyzerAddSample(eaIDByteSwap, int'(dout_parallel), int'(data_in_vec), $time);
-          `endif  
-        `endif
         shift_en = 1'b0;
       end
       my_clk_cnt = my_clk_cnt + 5;
@@ -193,16 +169,18 @@ module top_system (
       
     my_clk_cnt = my_clk_cnt + 20; 
     if (clk_cnt == my_clk_cnt) begin 
-      // Report analyzer findings at the end
-      eaAnalyzerReport(eaIDShifted);  
-      eaAnalyzerChecksPerform(eaIDShifted);
-      eaAnalyzerChecksPerform(eaIDInversed);
-      eaAnalyzerChecksPerform(eaIDReversed);
-      eaAnalyzerChecksPerform(eaIDByteSwap);
-
-      // Report summary for all analyzer --> Executed only once all analyzers are checked 
-      eaAnalyzersDumpTrace();
-      eaAnalyzersReport();    
+      eaReportInfo("S_FIN", 0, "Simulation finished", EA_VERBOSITY_LEVEL_NONE);
+      eaReportWarning("EX_WARN", 0, "Example warning message for demonstration purposes");
+      eaReportDebug("EX_DEB", 0, "Example debug message for demonstration purposes");
+      eaReportError("EX_ERR", 0, "Example error message for demonstration purposes");
+      eaReportFatal("EX_FAT", EA_ANALYZER_NONE, "Example fatal message for demonstration purposes"); 
+      
+      /// Runs all the stages for all Analyzers at once.
+      /// Calls :
+      ///   eaAnalyzersChecksPerform() 
+      ///   eaAnalyzersReport()
+      ///   eaAnalyzersDumpTrace()
+      eaAnalyzersFinal();
     
       $display("[%0t] Finish simulation \n", $time);
       $finish();
@@ -212,4 +190,3 @@ module top_system (
   
   
 endmodule
-

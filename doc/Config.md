@@ -1,5 +1,5 @@
 # Configuration File Description
-*ErrorAnalyzer* can be configured via a configuration file. The configuration file is stored in *YAML* format under the name `eaConfig.yml`. See [YAML](www.yaml.org) for details.  
+*ErrorAnalyzer* can be configured via a configuration file. The configuration file is stored in *YAML* format under the name `eaConfig.yml`. See [YAML](http://www.yaml.org) for details.  
 
 There are three possible locations for storing the configuration file `eaConfig.yml`. All three locations are checked during start-up and read in a fixed order. If a configuration parameter is present in more than one configuration file the parameter which occurs last has the highest priority. In other words, the configuration parameters are always overwritten. 
 
@@ -66,9 +66,12 @@ The parameters `Dump:ConsoleVerbosity` and `Dump:FileVerbosity` can be given as
 `Log:` \
 &nbsp;&nbsp;`ToConsoleEnable: [bool]` Enable logging to console \
 &nbsp;&nbsp;`ConsoleVerbosity: [str]` Verbosity level for writing to console (accepted values explained above) \
+&nbsp;&nbsp;`ConsoleColorsEnable: [bool]` Enable colored output for the console
+&nbsp;&nbsp;`ToSimConsoleEnable: [bool]` Enable logging to the simulator console
 &nbsp;&nbsp;`ToFileEnable: [bool]` Enable logging to file \
 &nbsp;&nbsp;`FileVerbosity: [str]` Verbosity level for writing to file (accepted values explained above) \
 &nbsp;&nbsp;`FileName: [str]` Log file name \
+&nbsp;&nbsp;`ReportPathEnable: [bool]` Enable reporting the path where report files are saved \
 &nbsp;&nbsp;`SumSkipPass: [bool]` In summary, skip Analyzer which are all pass \
 `Report:` \
 &nbsp;&nbsp;`PosPercLimit: [float]` Percentage of positive fail checks to be reported \
@@ -115,14 +118,17 @@ Dump:
   FailAnalzerOnly:   false
   FailInspectorOnly: true
 Log:
-  ToConsoleEnable:  true
-  ConsoleVerbosity: "EA_VERBOSITY_LEVEL_LOW" # EA_VERBOSITY_LEVEL_LOW
-  ToFileEnable:     true
-  FileVerbosity:    "EA_VERBOSITY_LEVEL_FULL" # (EA_VERBOSITY_LEVEL_FULL)
-  FileName:         "eaLogFile.log"
-  SumSkipPass:      true
+  ToConsoleEnable:     true
+  ConsoleVerbosity:    "EA_VERBOSITY_LEVEL_LOW" # EA_VERBOSITY_LEVEL_LOW
+  ConsoleColorsEnable: false
+  ToSimConsoleEnable:  false
+  ToFileEnable:        true
+  FileVerbosity:       "EA_VERBOSITY_LEVEL_FULL" # (EA_VERBOSITY_LEVEL_FULL)
+  FileName:            "eaLogFile.log"
+  ReportPathEnable: true
+  SumSkipPass:         true
 Report:
-  PosPercLimit: "50.0"
+  PosPercLimit:      "50.0"
   SummaryDumpEnable: true
-  SummaryFilename:  "eaAnalyzerSummary.csv"
+  SummaryFilename:   "eaAnalyzerSummary.csv"
 ```

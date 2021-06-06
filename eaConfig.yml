@@ -34,14 +34,17 @@ Dump:
   FailAnalzerOnly:   false
   FailInspectorOnly: true
 Log:
-  ToConsoleEnable:  true
-  ConsoleVerbosity: "EA_VERBOSITY_LEVEL_LOW" # EA_VERBOSITY_LEVEL_LOW
-  ToFileEnable:     true
-  FileVerbosity:    "EA_VERBOSITY_LEVEL_FULL" # (EA_VERBOSITY_LEVEL_FULL)
-  FileName:         "eaLogFile.log"
-  SumSkipPass:      true
+  ToConsoleEnable:     true
+  ConsoleVerbosity:    "EA_VERBOSITY_LEVEL_LOW" # EA_VERBOSITY_LEVEL_LOW
+  ConsoleColorsEnable: false
+  ToSimConsoleEnable:  false
+  ToFileEnable:        true
+  FileVerbosity:       "EA_VERBOSITY_LEVEL_FULL" # (EA_VERBOSITY_LEVEL_FULL)
+  FileName:            "eaLogFile.log"
+  ReportPathEnable: true
+  SumSkipPass:         true
 Report:
-  PosPercLimit: "50.0"
+  PosPercLimit:      "50.0"
   SummaryDumpEnable: true
-  SummaryFilename:  "eaAnalyzerSummary.csv"
+  SummaryFilename:   "eaAnalyzerSummary.csv"
 

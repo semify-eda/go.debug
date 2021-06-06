@@ -32,7 +32,7 @@ package ea_package;
  
   // API version --> needs to match to the API version of the called C functions   
   localparam EA_API_VERSION    = 2;
-  localparam EA_API_SUBVERSION = 0;
+  localparam EA_API_SUBVERSION = 2;
   
   // OK, not ok 
   localparam EA_OK    = 1;
@@ -60,6 +60,8 @@ package ea_package;
   localparam EA_DATA_IS_UNSIGNED  = 0;
   localparam EA_DATA_IS_SIGNED    = 1;
   
+  // No analyzer 
+  localparam  EA_ANALYZER_NONE = -1;
     
   // External functions 
   `ifndef EA_DPI_USE_DUMMY 
@@ -77,7 +79,6 @@ package ea_package;
     ///   * `EA_OK (1)   `: API versions match.
     /// Indented to be called from the testbench in the following way: `eaAPIVersionOk(EA_API_VERSION, EA_API_SUBVERSION);` 
     import "DPI-C" function int eaAPIVersionOk(input int Version, input int SubVersion);
-
     
     // -----------------------------------------------------------------------
     // Analyzer specific functions 
@@ -115,6 +116,16 @@ package ea_package;
     // -----------------------------------------------------------------------
     // Functions applied to all Analyzer 
     // -----------------------------------------------------------------------
+    
+    /// Runs all the stages for all Analyzers at once.
+    /// Calls :
+    ///   eaAnalyzersChecksPerform() 
+    ///   eaAnalyzersReport()
+    ///   eaAnalyzersDumpTrace()
+    import "DPI-C" function void eaAnalyzersFinal();
+    
+    /// Runs checks and analysis for all *Inspectors* of all Analyzers
+    import "DPI-C" function void eaAnalyzersChecksPerform();
 
     /// Reports a final summary of all Analyzer showing relevant proposals for potential error pattern - (required).
     ///
@@ -130,6 +141,24 @@ package ea_package;
     ///  * fst ... Binary format which is GTKWave specific 
     import "DPI-C" function void eaAnalyzersDumpTrace(); 
     
+    /// Import Logging Functions
+    /// These functions report different kinds of messages that get written into
+    /// the eaLogFile and also printed to the console.
+    /// Parameters:
+    ///  * reportID        - A short descriptive string concerning the message
+    ///  * elementID       - The integer ID of the analyzer the message is associated with (can be EA_ANALYZER_NONE, meaning not associated with any analyzer)
+    ///  * msg             - The actual message string
+    ///  * reportVerbosity - Verbosity level for messages (see top of this file)
+    /// Report a fatal message (can't be masked)
+    import "DPI-C" function void eaReportFatal(  input string reportID, input int elementID, input string msg);
+    /// Report an error message
+    import "DPI-C" function void eaReportError(  input string reportID, input int elementID, input string msg);
+    /// Report a warning message
+    import "DPI-C" function void eaReportWarning(input string reportID, input int elementID, input string msg);
+    /// Report an info message (has also a verbosity associated)
+    import "DPI-C" function void eaReportInfo(   input string reportID, input int elementID, input string msg, input int reportVerbosity);
+    /// Report a debug message
+    import "DPI-C" function void eaReportDebug(  input string reportID, input int elementID, input string msg);
     
   `else
      // Function stubs for disabling the ErrorAnalyzer functionality. 
@@ -154,12 +183,34 @@ package ea_package;
   
      function void eaAnalyzerChecksPerform(int ID);
      endfunction
+     
+     function void eaAnalyzersFinal();
+     endfunction
+     
+     function void eaAnalyzersChecksPerform();
+     endfunction
       
      function void eaAnalyzersReport(); 
      endfunction
 
      function void eaAnalyzersDumpTrace(); 
      endfunction
+     
+     function void eaReportFatal(input string reportID, input int elementID, input string msg);
+     endfunction
+     
+     function void eaReportError(input string reportID, input int elementID, input string msg);
+     endfunction
+     
+     function void eaReportWarning(input string reportID, input int elementID, input string msg);
+     endfunction
+     
+     function void eaReportInfo(input string reportID, input int elementID, input string msg, input int reportVerbosity);
+     endfunction
+     
+     function void eaReportDebug(input string reportID, input int elementID, input string msg);
+     endfunction
+     
   `endif
 
 endpackage

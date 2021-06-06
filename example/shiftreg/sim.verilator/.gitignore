@@ -4,3 +4,4 @@ obj_dir/*
 *.trc
 *.vcd
 *.fst
+*.csv

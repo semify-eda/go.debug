@@ -50,7 +50,7 @@ VERILATOR_FLAGS += -Os -x-assign 0
 # Warn abount lint issues; may not want this on less solid designs
 #VERILATOR_FLAGS += -Wall
 # Make waveforms
-VERILATOR_FLAGS += --trace-fst --vpi
+VERILATOR_FLAGS += --trace-fst
 #VERILATOR_FLAGS += -LDFLAGS -lz 
 VERILATOR_FLAGS += --trace --trace-structs
 # Check SystemVerilog assertions
@@ -67,52 +67,16 @@ VERILATOR_FLAGS += --trace --trace-structs
 VERILATOR_FLAGS += $(ARG) -l2-name top
 
 # Input files for Verilator
-VERILATOR_INPUT = -f input.vc -F ../testbench/file.f -F ../rtl/file.f 
+VERILATOR_INPUT = -f input.vc -F ./../testbench/file.f -F ./../rtl/file.f 
 LIBEA_SRC = -I. -I${EA_ROOT}/src/ea  -F ${EA_ROOT}/src/ea/file.f
-LINKER = -LDFLAGS "-L ${EA_ROOT}/lib/lib32 -L ${EA_ROOT}/lib/lib64 -lea-vpi-dpi"
+LINKER = -LDFLAGS "-L ${EA_ROOT}/lib/lib32 -L ${EA_ROOT}/lib/lib64 -lea-dpi"
 
 
 # Handling of dedicated errors to show ErrorAnalyzer functionality
 EA_SIM_FLAGS = 
-ifneq ($(EA_ERROR_BITSHIFT),)
-  EA_SIM_FLAGS += +define+EA_ERROR_BITSHIFT
-  $(info Inserting failure: Bitshift)
-endif
-ifneq ($(EA_ERROR_BITSINVERSED),)
-  EA_SIM_FLAGS += +define+EA_ERROR_BITSINVERSED
-  $(info Inserting failure: Bits inversed)  
-endif
-ifneq ($(EA_ERROR_BITSREVERSED),)
-  EA_SIM_FLAGS += +define+EA_ERROR_BITSREVERSED
-  $(info Inserting failure: Bits reversed)
-endif
-ifneq ($(EA_ERROR_BYTESSWAPPED),)
-  EA_SIM_FLAGS += +define+EA_ERROR_BYTESSWAPPED
-  $(info Inserting failure: Bytes swapped)
-endif
-ifneq ($(EA_ERROR_CONST),)
-  EA_SIM_FLAGS += +define+EA_ERROR_CONST
-  $(info Inserting failure: Constant read value)
-endif
-
-
-
 
 ######################################################################
 default: run
-
-help:
-	@echo "------------------------------"
-	@echo "Possible run options: "
-	@echo "  Targets:"
-	@echo "    help     ... (default) This message"
-	@echo "    clean    ... Remove all files from the actual directory except the link to Makefile"
-	@echo "    run      ... Run simulation using ErrorAnalyzer as shared library "
-	@echo "  make EA_ERROR_BITSHIFT='en' "
-	@echo "  make EA_ERROR_BITSINVERSED='en' "
-	@echo "  make EA_ERROR_BITSREVERSED='en' "
-	@echo "  make EA_ERROR_BYTESSWAPPED='en' "
-	@echo "  make EA_ERROR_CONST='en' "
 
 run:
 	@echo

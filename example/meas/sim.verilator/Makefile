@@ -49,7 +49,7 @@ VERILATOR_FLAGS += -Os -x-assign 0
 # Warn abount lint issues; may not want this on less solid designs
 #VERILATOR_FLAGS += -Wall
 # Make waveforms
-VERILATOR_FLAGS += --trace-fst 
+VERILATOR_FLAGS += --trace-fst --vpi
 #VERILATOR_FLAGS += -LDFLAGS -lz 
 VERILATOR_FLAGS += --trace --trace-structs
 # Check SystemVerilog assertions
@@ -60,13 +60,15 @@ VERILATOR_FLAGS += --trace --trace-structs
 #VERILATOR_FLAGS += --debug
 # Add this trace to get a backtrace in gdb
 #VERILATOR_FLAGS += --gdbbt
-# Add XML output file geneation
+# Add XML output file generation
 #VERILATOR_FLAGS += --xml-output ./Vtop.xml --xml-only --flatten --bbox-sys
 # Add user specific files
 VERILATOR_FLAGS += $(ARG)
 
 # Input files for Verilator
-VERILATOR_INPUT = -f input.vc -F ../testbench/file.f -F ../rtl/file.f -LDFLAGS "-L ${EA_ROOT}/lib/lib32 -L ${EA_ROOT}/lib/lib64 -lea"
+VERILATOR_INPUT = -f input.vc -F ../testbench/file.f -F ../rtl/file.f 
+LINKER = -LDFLAGS "-L ${EA_ROOT}/lib/lib32 -L ${EA_ROOT}/lib/lib64 -lea-vpi-dpi"
+LIBEA_SRC = -I. -I${EA_ROOT}/src/ea  -F ${EA_ROOT}/src/ea/file.f
 
 # Handling of dedicated errors to show ErrorAnalyzer functionality
 EA_SIM_FLAGS =
@@ -109,10 +111,9 @@ help:
 	@echo "                 Arguments for enablings design / verification errors"
 	@echo "                   none                       ... no error"
 	@echo "                   EA_ERROR_BITSHIFT='en'     ... Bit shift error"
-	@echo "                   EA_ERROR_TIMESHIFT='en'    ... Time shift error"
 	@echo "                   EA_ERROR_SAT='en'          ... Saturation error"
 	@echo "                   EA_ERROR_STUCK='en'        ... Stuck at error"
-	@echo "                 Arguments for isabling ErrorAnalyzer 
+	@echo "                   Arguments for isabling ErrorAnalyzer" 
 	@echo "                   EA_DISABLE='en'            ... Disable ErrorAnalyzer"
 	@echo ""
 
@@ -122,7 +123,7 @@ run:
 	@echo "-- Verilator tracing example"
 	@echo
 	@echo "-- VERILATE ----------------"
-	$(VERILATOR) $(VERILATOR_FLAGS) $(EA_SIM_FLAGS) $(VERILATOR_INPUT) 
+	$(VERILATOR) $(VERILATOR_FLAGS) $(EA_SIM_FLAGS) $(VERILATOR_INPUT) $(LINKER)
 
 	@echo
 	@echo "-- BUILD -------------------"
