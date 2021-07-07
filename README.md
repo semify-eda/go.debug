@@ -77,17 +77,6 @@ As waveform viewer GTKWave (v3.3.104 (w)1999-2020 BSI) is used. A description on
 - Redhat (tested with Cadence Xcelium)
 
 
-## Digital Simulation
-For digital simulations two simulator were used and tested:
-
-* Verilator (4.034 2020-05-03 rev v4.034-6-gf8381751) simulator is used. A description on how to download and install Verilator can be found under: https://www.veripool.org/wiki/verilator/Manual-verilator
-* Cadence Xcelium 19.09
-
-
-## Waveform Viewer
-As waveform viewer GTKWave (v3.3.104 (w)1999-2020 BSI) is used. A description on how to download and install GTKWave can be found under http://gtkwave.sourceforge.net/.
-
-
 ## Licensing 
 
 The basic version of *ErrorAnalyzer* can be used free of charge. The free version is limited in terms of maximal number of supported *Analyzer* (5) and maximal support number of samples per *Analyzer* (256).
