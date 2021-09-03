@@ -15,6 +15,7 @@ Inspector:
       Enable:           true
       MaxTruncatedBits: "-1"
       MaxRoundedBits:   "-1"
+      MaxAbsDiff:       "-1"
   Segment:
     SampleShift:
       Enable:           true
@@ -47,4 +48,7 @@ Report:
   PosPercLimit:      "50.0"
   SummaryDumpEnable: true
   SummaryFilename:   "eaAnalyzerSummary.csv"
-
+  SummaryIncremental: false
+  DatabaseFilename:  "eaDatabase.yaml"
+  DatabaseDumpEnable: true
+  

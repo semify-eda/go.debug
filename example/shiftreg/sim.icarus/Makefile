@@ -35,7 +35,12 @@ Vtop.vvp: $(TESTBENCH) $(SRC)
 
 run: Vtop.vvp ${EA_ROOT}/lib/lib64/libea-vpi.so
 	vvp -M. -m${EA_ROOT}/lib/lib64/libea-vpi.so Vtop.vvp -fst 
-	
+
+run-xrun:
+	xrun -64bit +access+r -loadvpi ${EA_ROOT}/lib/lib64/libea-vpi.so:vlog_startup_routines_bootstrap $(TESTBENCH) $(SRC) -top top #
+	#-define EA_ERROR_BITSHIFT
+	#-gui
+
 clean:
 	rm -f Vtop.vvp eaAnalyzerSummary.csv eaInspectorWaves.fst eaInspectorWaves.vcd eaLogFile.log
 

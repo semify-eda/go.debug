@@ -82,23 +82,27 @@ module top_system (
     shift_en     = 1'b0;
     shift_ld     = 1'b0;
 
-    // Check shift
+    // Check shift register
     for (int word=0; word<=9; word=word+1) begin
+      // Fill expected data
       data_in_vec = data_in_array[word];
-      for (int i=23; i>=0; i=i-1) begin 
+
+      // Load shift register
+      for (int i=23; i>=0; i=i-1) begin
         #2
         shift_en = 1'b1;
         din      = data_in_vec[i];
       end
       #2
-      `ifdef EA_ERROR_BITSHIFT
-        data_in_vec = data_in_vec << 2;
-      `endif
-      trigger = ~trigger;
-      #10
       shift_en = 1'b0;
       
-    end 
+      // Scoreboard
+      if (dout_parallel != data_in_vec) begin
+        $error("Error: expected and read data mismatch");
+      end
+      trigger = ~trigger;
+    end
+
     shift_en = 1'b0;
     shift_clr = 1'b1;
     shift_clr = 1'b0;

@@ -66,8 +66,8 @@ The parameters `Dump:ConsoleVerbosity` and `Dump:FileVerbosity` can be given as
 `Log:` \
 &nbsp;&nbsp;`ToConsoleEnable: [bool]` Enable logging to console \
 &nbsp;&nbsp;`ConsoleVerbosity: [str]` Verbosity level for writing to console (accepted values explained above) \
-&nbsp;&nbsp;`ConsoleColorsEnable: [bool]` Enable colored output for the console
-&nbsp;&nbsp;`ToSimConsoleEnable: [bool]` Enable logging to the simulator console
+&nbsp;&nbsp;`ConsoleColorsEnable: [bool]` Enable colored output for the console \
+&nbsp;&nbsp;`ToSimConsoleEnable: [bool]` Enable logging to the simulator console \
 &nbsp;&nbsp;`ToFileEnable: [bool]` Enable logging to file \
 &nbsp;&nbsp;`FileVerbosity: [str]` Verbosity level for writing to file (accepted values explained above) \
 &nbsp;&nbsp;`FileName: [str]` Log file name \
@@ -77,6 +77,10 @@ The parameters `Dump:ConsoleVerbosity` and `Dump:FileVerbosity` can be given as
 &nbsp;&nbsp;`PosPercLimit: [float]` Percentage of positive fail checks to be reported \
 &nbsp;&nbsp;`SummaryDumpEnable: [bool]` Enable dumping analyzer summary into csv file \
 &nbsp;&nbsp;`SummaryFilename: [string]` Filename for analyzer summary csv dumping \
+&nbsp;&nbsp;`SummaryIncremental: [bool]` Switch between overwriting and appending .csv summary dump file \
+&nbsp;&nbsp;`DatabaseFilename: [string]` Filename for dumping Analyzers results database \
+&nbsp;&nbsp;`DatabaseDumpEnable: [bool]` Enable dumping Analyzers results to database
+
 
 
 ## Actual file
@@ -130,5 +134,10 @@ Log:
 Report:
   PosPercLimit:      "50.0"
   SummaryDumpEnable: true
+  SummaryFilename:  "eaAnalyzerSummary.csv"
+  SummaryIncremental: false
+  DatabaseFilename:  "eaDatabase.yaml"
+  DatabaseDumpEnable: true
   SummaryFilename:   "eaAnalyzerSummary.csv"
+  
 ```

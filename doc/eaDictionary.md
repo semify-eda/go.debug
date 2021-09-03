@@ -22,6 +22,7 @@
 | CFGVARER | Variable "%s" in configuration file %s could not be read correctly. See documentation for accepted values. | Issues a warning if a variable fails to be correctly read from the configuration file|WARNING|NONE |
 | DUMPFST | Created Analyzer trace file %s and dumped traces in GtkWave fst format. | Indicates that the Analyzer trace file has been created and the traces have been dumped in a GtkWave fst file.|INFO|NONE |
 | DUMPVCD | Created Analyzer trace file %s and dumped traces in vcd format. | Indicates that the Analyzer trace file has been created and the traces have been dumped in a vcd file.|INFO|NONE |
+| DUMPYAML | Created Analyzer YAML database file %s and dumped Analyzer information to it. | Indicates that the Analyzer database file has been created and the Analyzer information have been dumped in a YAML file.|INFO|NONE |
 | EADATE | Build date %s. | Provides the date of the ErrorAnalyzer build.|INFO|NONE |
 | EAVER | Using ErrorAnalyzer version %s. | Provides the actual ErrorAnalyzer version.|INFO|NONE |
 | GMDEBUG | General message: %s! | Prints a general debug message %s without any specific message ID. Mainly used for debugging purpose|INFO|DEBUG |
@@ -65,6 +66,7 @@
 | CFGRPORT | EA Configuration Report: | Reports EA configuration values|FULL |
 | DUMPFST | Created Analyzer trace file %s and dumped traces in GtkWave fst format. | Indicates that the Analyzer trace file has been created and the traces have been dumped in a GtkWave fst file.|NONE |
 | DUMPVCD | Created Analyzer trace file %s and dumped traces in vcd format. | Indicates that the Analyzer trace file has been created and the traces have been dumped in a vcd file.|NONE |
+| DUMPYAML | Created Analyzer YAML database file %s and dumped Analyzer information to it. | Indicates that the Analyzer database file has been created and the Analyzer information have been dumped in a YAML file.|NONE |
 | EADATE | Build date %s. | Provides the date of the ErrorAnalyzer build.|NONE |
 | EAVER | Using ErrorAnalyzer version %s. | Provides the actual ErrorAnalyzer version.|NONE |
 | GMDEBUG | General message: %s! | Prints a general debug message %s without any specific message ID. Mainly used for debugging purpose|DEBUG |
@@ -122,6 +124,7 @@
 | CFGVARER | Variable "%s" in configuration file %s could not be read correctly. See documentation for accepted values. | Issues a warning if a variable fails to be correctly read from the configuration file|WARNING |
 | DUMPFST | Created Analyzer trace file %s and dumped traces in GtkWave fst format. | Indicates that the Analyzer trace file has been created and the traces have been dumped in a GtkWave fst file.|INFO |
 | DUMPVCD | Created Analyzer trace file %s and dumped traces in vcd format. | Indicates that the Analyzer trace file has been created and the traces have been dumped in a vcd file.|INFO |
+| DUMPYAML | Created Analyzer YAML database file %s and dumped Analyzer information to it. | Indicates that the Analyzer database file has been created and the Analyzer information have been dumped in a YAML file.|INFO |
 | EADATE | Build date %s. | Provides the date of the ErrorAnalyzer build.|INFO |
 | EAVER | Using ErrorAnalyzer version %s. | Provides the actual ErrorAnalyzer version.|INFO |
 | GMINFO | General message: %s! | Prints a general info message %s without any specific message ID.|INFO |
@@ -166,5 +169,5 @@
 | GMDEBUG | General message: %s! | Prints a general debug message %s without any specific message ID. Mainly used for debugging purpose|INFO |
 
 
-Created on Sun Jun  6 15:34:41 2021
+Created on Fri Sep  3 11:39:35 2021
 

@@ -77,7 +77,11 @@ module ste_shift_reg #(
     end  
   end
   
+  `ifdef EA_ERROR_BITSHIFT
+  assign dout_parallel_o = shift_ff<<2;
+  `else
   assign dout_parallel_o = shift_ff;
+  `endif
   assign dout_o         = shift_ff[SHIFT_W-1];
   
 endmodule

@@ -1,0 +1,11 @@
+*.log
+*.vcd
+*.fst
+*.csv
+*.vvp
+xcelium.d
+xrun.history
+.simvision
+xcelium.d
+xrun.history
+xrun.key

@@ -16,7 +16,9 @@ module top ();
       $dumpfile("logs/vlt_dump.vcd");
       $dumpvars();
     end
+    `ifndef GUI
     id1 = $eaVPIAnalyzerCreateCb("Analyzer 1", 0, 24, 0, int'($time), "top.i_u_top_system.trigger", "top.i_u_top_system.data_in_vec", "top.i_u_top_system.dout_parallel");
+    `endif
     $display("[%0t] Model running...\n", $time);
     clk = 0;
   end

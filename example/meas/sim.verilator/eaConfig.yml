@@ -44,3 +44,8 @@ Report:
   PosPercLimit: "50.0"
   SummaryDumpEnable: true
   SummaryFilename:  "eaAnalyzerSummary.csv"
+  SummaryIncremental: false
+  DatabaseFilename:  "eaDatabase.yaml"
+  DatabaseDumpEnable: true
+  
+  

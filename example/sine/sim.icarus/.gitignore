@@ -1,0 +1,6 @@
+*.log
+*.vcd
+*.fst
+*.csv
+*.vvp
+*.yaml

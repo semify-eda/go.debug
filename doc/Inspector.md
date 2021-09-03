@@ -63,32 +63,36 @@ The information is provided in two ways.
 
 The following table provides an overview about the existing *Inspectors* and their provided errror pattern as part of the `Inspector Inspection Summary`.
   
-| Inspector Type | Category | Sub Category | Info Type | Summary ID             | Description                                               |
-|----------------|----------|--------------|-----------|:-----------------------|:----------------------------------------------------------|
-| Sample         | LOG      | SHIFT        | Fix       | LOG.SHIFT.RIGHT_\<n\>    | Fixable by shifting the read data right by <n> bit relative to the expected value       |
-| Sample         | LOG      | SHIFT        | Fix       | LOG.SHIFT.LEFT_\<n\>     | Fixable by shifting the read data left by <n> bit relative to the expected value         |
-| Sample         | LOG      | BIT          | Fix       | LOG.BIT.STUCK0_\<n\>     | Fixable by forcing bit <n> of read data to 0              |
-| Sample         | LOG      | BIT          | Fix       | LOG.BIT.STUCK1_\<n\>     | Fixable by forcing bit <n> of read data to 1              |
-| Sample         | LOG      | BIT          | Fix       | LOG.BIT.FLIP_\<n\>       | Fixable by flipping (inverting) bit <n> of read data      |
-| Sample         | LOG      | BIT          | Fix       | LOG.BIT.INV            | Fixable by inverting the whole read data                  |
-| Sample         | LOG      | BIT          | Fix       | LOG.BIT.OrderRev       | Fixable by reversing the bit order                        |
-| Sample         | LOG      | BIT          | Fix       | LOG.BIT.ByteSwap       | Fixable by aplying different type of byte swaps including little and big endian swapping|
-| Sample         | LOG      | BIT          | Ana       | LOG.BIT.FailPerBit     | Indicates which bits are failing                          |
-| Sample         | LOG      | BIT          | Ana       | LOG.BIT.FailBitCnt     | Number of failing bits per sample                         |
-| Segment        | TIM      | SHIFT        | Fix       | TIM.SHIFT.DELAY_\<val\>  | Fixable by delaying the read data by <val> sample(s)      |
-| Segment        | TIM      | SHIFT        | Fix       | TIM.SHIFT.DELAY_\<val\>  | Fixable by delaying the read data by <val> sample(s)      |
-| Segment        | NUM      | CONST        | Fix       | NUM.CONST.PASS         | Fixable by using a constant value for all passing samples |
-| Segment        | NUM      | CONST        | Fix       | NUM.CONST.FAILREAD     | Fixable by using a constant value for all read values of failed samples    |
+| Inspector Type | Category | Sub Category | Info Type | Summary ID               | Description                                                 |
+|----------------|----------|--------------|-----------|:-------------------------|:------------------------------------------------------------|
+| Sample         | LOG      | SHIFT        | Fix       | LOG.SHIFT.RIGHT_\<n\>    | Fixable by shifting the read data right by \<n\> bit relative to the expected value      |
+| Sample         | LOG      | SHIFT        | Fix       | LOG.SHIFT.LEFT_\<n\>     | Fixable by shifting the read data left by \<n\> bit relative to the expected value       |
+| Sample         | LOG      | BIT          | Fix       | LOG.BIT.STUCK0_\<n\>     | Fixable by forcing bit \<n\> of read data to 0              |
+| Sample         | LOG      | BIT          | Fix       | LOG.BIT.STUCK1_\<n\>     | Fixable by forcing bit \<n\> of read data to 1              |
+| Sample         | LOG      | BIT          | Fix       | LOG.BIT.FLIP_\<n\>       | Fixable by flipping (inverting) bit \<n\> of read data      |
+| Sample         | LOG      | BIT          | Fix       | LOG.BIT.INVERSE          | Fixable by inverting the whole read data                    |
+| Sample         | LOG      | BIT          | Fix       | LOG.BIT.REVERSE          | Fixable by reversing the bit order                          |
+| Sample         | LOG      | BIT          | Fix       | LOG.BIT.SWAP             | Fixable by aplying different type of byte swaps including little and big endian swapping |
+| Sample         | LOG      | INTEGER      | Fix       | LOG.INTEGER.TRUNC_\<n\>  | Fixable by truncating the last \<n\> bits                   |
+| Sample         | LOG      | INTEGER      | Fix       | LOG.INTEGER.ROUND_\<n\>  | Fixable by rounding the last \<n\> bits with the specified rounding mode (default: EAROUND\_NEAREST\_HALF\_UP) |
+| Sample         | LOG      | INTEGER      | Fix       | LOG.INTEGER.SIGN_FLP     | Fixable by flipping the sign of the integer                 |
+| Sample         | LOG      | INTEGER      | Fix       | LOG.INTEGER.CONV_UNS     | Fixable by converting the integer to unsigned               |
+| Sample         | LOG      | INTEGER      | Fix       | LOG.INTEGER.CONV_SIG     | Fixable by converting the integer to signed                 |
+| Sample         | NUM      | INTEGER      | Fix       | LOG.INTEGER.ABSDF        | Fixable by adding/subtracting absolute difference value     |
+| Segment        | TIM      | SHIFT        | Fix       | TIM.SHIFT.DELAY_\<val\>  | Fixable by delaying the read data by \<val\> sample(s)      |
+| Segment        | TIM      | SHIFT        | Fix       | TIM.SHIFT.DELAY_\<val\>  | Fixable by delaying the read data by \<val\> sample(s)      |
+| Segment        | NUM      | CONST        | Fix       | NUM.CONST.PASS         | Fixable by using a constant value for all passing samples     |
+| Segment        | NUM      | CONST        | Fix       | NUM.CONST.FAILREAD     | Fixable by using a constant value for all read values of failed samples     |
 | Segment        | NUM      | CONST        | Fix       | NUM.CONST.FAILEXPECTED | Fixable by using a constant value for all expected values of failed samples |
-| Segment        | NUM      | SWAPPED      | Fix       | NUM.BIT.SWAPPED        | Fixable by swapping the two swapped bits back             |
-| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.FP_Range\<val\>_\<pf\>   | Tries to split read values into two ranges <val> one failing <pf>-Fail  and one passing <pf>-Pass         |
-| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.PF_Range\<val\>_\<pf\>   | Tries to split read values into two ranges <val> one passing <pf>-Pass and one failing <pf>-Fail          |
-| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.FPF_Range\<val\>_\<pf\>  | Tries to split read values into three ranges <val> one failing <pf>-Fail, one passing <pf>-Pass and one failing <pf>-Fail      |
-| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.PFB_Range\<val\>_\<pf\>  | Tries to split read values into three ranges <val> one passing <pf>-Pass, one failing <pf>-Fail and one passing <pf>-Pass      |
+| Segment        | NUM      | SWAPPED      | Fix       | NUM.BIT.SWAPPED        | Fixable by swapping the two swapped bits back                 |
+| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.FP\_Range\<val\>\_\<pf\>   | Tries to split read values into two ranges \<val\> one failing \<pf\>-Fail  and one passing \<pf\>-Pass |
+| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.PF\_Range\<val\>\_\<pf\>   | Tries to split read values into two ranges \<val\> one passing \<pf\>-Pass and one failing \<pf\>-Fail  |
+| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.FPF\_Range\<val\>\_\<pf\>  | Tries to split read values into three ranges \<val\> one failing \<pf\>-Fail, one passing \<pf\>-Pass and one failing \<pf\>-Fail |
+| Segment        | ARITH    | RANGE        | Ana       | ARITH.RANGE.PFB\_Range\<val\>\_\<pf\>  | Tries to split read values into three ranges \<val\> one passing \<pf\>-Pass, one failing \<pf\>-Fail and one passing \<pf\>-Pass |
 
 
 
-The following table provides an overview about the generated statistisc which is dumped into the log file.
+The following table provides an overview about the generated statistics which are dumped into the log file.
 
 | Inspector Type | Category | Sub Category | Info Type | Summary ID             | Description                                               |
 |:---------------|----------|--------------|-----------|------------------------|:----------------------------------------------------------|
@@ -146,11 +150,41 @@ The single bit *Inspector* tries to fix fails by masking single bits in the read
   
 Stuck at failure scenario and bit flip scenario are overlapping. Therefore, the reporting flags if a bit flip is more likely to be a stuck at than a bit flip.
 
-
 Parameter: 
 
 None
 
+### Integer *Inspector*
+
+Category: [LOG]
+
+Sub Category: [INTEGER]
+
+Information type: Fixable
+
+The integer *Inspector* tries to fix fails by doing various operations with integers. Namely truncation, rounding, sign flipping and converting between unsigned and signed representations.
+
+The following failure scenarios are analyzed:
+
+* **[TRUNC]**: Truncates the last \<n\> bits
+* **[ROUND]**: Rounds the last \<n\> bits with the specified rounding mode
+* **[SIGN_FLP]**: Flips the sign of the integer
+* **[CONV_UNS]**: Converts the integer to unsigned
+* **[CONV_SIG]**: Converts the integer to signed
+* **[ABSDIFF]**: Checks absolute difference of \<n\>
+
+Parameter: 
+
+| Parameter        | Description                                                      |
+|:-----------------|:-----------------------------------------------------------------|
+| MaxTruncatedBits | Maximum number of bits considered for truncation (default: -1)   |
+| MaxRoundedBits   | Maximum number of bits considered for rounding (default: -1)     |
+| RoundingMode     | The mode used for rounding (default: EAROUND\_NEAREST\_HALF\_UP) |
+| MaxAbsDiff       | Maximum range in which absolute difference is checked (default: -1)|
+
+Note: -1 translates to 1/4 of the bit width
+
+**Histogram:** The histogram with absolute difference between read and expected data is provided. The histogram separates the value range into 2**MaxAbsDiff* bins. Bins represent how many samples are fail fixable using specific absolute difference value. To handle this case an additional bin of underflow (UF) and an additional bin for overflow (OV) is added to the histogram.
 
 ## Segment *Inspectors*
 
@@ -169,12 +203,10 @@ The sample shift *Inspector* tries to fix fails by comparing the next or the pre
 
 Parameter:
 
-| Parameter      | Decription                                         |
+| Parameter      | Description                                        |
 |:---------------|:---------------------------------------------------|
 | SampleShiftMin | Minimum number of expected sample shift for fixing |
 | SampleShiftMax | Maximum number of expected sample shift for fixing |
-
-The sample shift *Inspector* tries to fix fails by comparing the next or the previous read values with the expected values in order to get the samples pass.  
 
 
 ### Range *Inspector*
