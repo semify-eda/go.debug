@@ -132,12 +132,16 @@ module top_system (
       
       if (clk_cnt == my_clk_cnt) begin
         `ifdef EA_ERROR_BITSHIFT
+          /* verilator lint_off WIDTH */
           eaAnalyzerAddSample(eaIDShifted   , int'(dout_parallel>>2), int'(data_in_vec), $time);
+          /* verilator lint_on WIDTH */
         `else
           eaAnalyzerAddSample(eaIDShifted   , int'(dout_parallel), int'(data_in_vec), $time);
         `endif
         `ifdef EA_ERROR_BITSINVERSED
+          /* verilator lint_off WIDTH */
           eaAnalyzerAddSample(eaIDInversed, int'(dout_parallel), int'(~data_in_vec), $time);
+          /* verilator lint_on WIDTH */
         `else
           eaAnalyzerAddSample(eaIDInversed, int'(dout_parallel), int'(data_in_vec), $time);
         `endif

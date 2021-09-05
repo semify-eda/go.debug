@@ -1,0 +1,10 @@
+*.vcd
+*.fst
+*.o
+*.vvp
+*.vpi
+*.csv
+*.log
+sim_build
+results.xml
+

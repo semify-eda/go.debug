@@ -111,6 +111,7 @@ help:
 	@echo "                 Arguments for enablings design / verification errors"
 	@echo "                   none                       ... no error"
 	@echo "                   EA_ERROR_BITSHIFT='en'     ... Bit shift error"
+	@echo "                   EA_ERROR_TIMESHIFT='en'    ... Time shift error"
 	@echo "                   EA_ERROR_SAT='en'          ... Saturation error"
 	@echo "                   EA_ERROR_STUCK='en'        ... Stuck at error"
 	@echo "                   Arguments for isabling ErrorAnalyzer" 
