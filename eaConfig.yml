@@ -33,11 +33,11 @@ Dump:
   FileVcdEnable:     true
   FileVcdName:       "eaInspectorWaves.vcd"
   FailAnalzerOnly:   false
-  FailInspectorOnly: true
+  FailInspectorOnly: false
 Log:
   ToConsoleEnable:     true
   ConsoleVerbosity:    "EA_VERBOSITY_LEVEL_LOW" # EA_VERBOSITY_LEVEL_LOW
-  ConsoleColorsEnable: false
+  ConsoleColorsEnable: true
   ToSimConsoleEnable:  false
   ToFileEnable:        true
   FileVerbosity:       "EA_VERBOSITY_LEVEL_FULL" # (EA_VERBOSITY_LEVEL_FULL)

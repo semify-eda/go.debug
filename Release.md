@@ -1,3 +1,12 @@
+# Version 2.2.1: 20. September 2021
+
+## Improvements
+  -
+
+## Bug fixes
+  - (Issue ErrorAnalyzer/ea_dev#185): Vcd/Fst dump initial signal bug fix
+  - (Issue ErrorAnalyzer/ea_dev#184): Console output coloring bug fix
+
 # Version 2.2.0: 24. August 2021
 
 ## Improvements
